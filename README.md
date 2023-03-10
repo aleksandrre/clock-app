@@ -1,4 +1,4 @@
-# github-user-search-app-REACT
+# Clock App
 
 ## Links
 
