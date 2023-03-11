@@ -104,7 +104,7 @@ export const Noactive = styled.div<{ fontSize: any, noactive: boolean }>`
       h4 {
         color: #ffffff;
         font-size: ${({ fontSize }) => fontSize.mobileFonts.Bst};
-        margin-bottom: 15px;
+        margin-bottom: 14px;
         margin-left: 15px;
 
         font-family: "Inter";
@@ -112,11 +112,13 @@ export const Noactive = styled.div<{ fontSize: any, noactive: boolean }>`
         font-weight: 300;
         @media (min-width:${({ theme }) => theme.responsive.tablet.width}){
           font-size:  ${({ fontSize }) => fontSize.tabletFonts.Bst};
+          margin-bottom: 0px;
           
         }
-        @media (min-width:${({ theme }) => theme.responsive.desktop.Bst}){
+        @media (min-width:${({ theme }) => theme.responsive.desktop.width}){
 
           font-size:  ${({ fontSize }) => fontSize.desktopFonts.Bst};
+          margin-bottom: 10px
           
         }
       }

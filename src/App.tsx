@@ -10,6 +10,7 @@ import {
   Noactive,
 } from "./components/mobile.component/mobile.styled.component";
 import iconsun from "./assets/desktop/icon-sun.svg";
+import iconmoon from "./assets/desktop/icon-moon.svg";
 import iconrefresh from "./assets/desktop/icon-refresh.svg";
 import arrowdown from "./assets/desktop/icon-arrow-down.svg";
 import arrowup from "./assets/desktop/icon-arrow-up.svg";
@@ -22,6 +23,9 @@ function App() {
   const [currentTime, setCurrentTime] = useState([
     time.getHours(),
     time.getMinutes(),
+    time.getDay(),
+    time.getDate(),
+    time.getFullYear(),
   ]);
   const updateTime = () => {
     let time = new Date();
@@ -31,7 +35,7 @@ function App() {
 
   const changetheme = () => {
     setColor(!color);
-    setTheme(color ? themeLight : themeDark);
+    setTheme(color ? themeDark : themeLight);
   };
   return (
     <ThemeProvider theme={theme}>
@@ -47,7 +51,7 @@ function App() {
         </div>
         <section className="section1">
           <section>
-            <img src={iconsun} />
+            <img src={color ? iconsun : iconmoon} />
             <h3> {theme.title.hititle}</h3>
           </section>
           <section>
@@ -76,18 +80,18 @@ function App() {
               <h2>Europe/London</h2>
             </div>
             <div className="divchildren">
-              <h1>DAY OF THE YEAR</h1>
-              <h2>295</h2>
+              <h1>DAY OF THE Month</h1>
+              <h2>{currentTime[3]}</h2>
             </div>
           </div>
           <div className="divchild">
             <div className="divchildren">
               <h1>DAY OF THE WEEK</h1>
-              <h2>5</h2>
+              <h2>{currentTime[2]}</h2>
             </div>
             <div className="divchildren">
-              <h1>WEEK NUMBER</h1>
-              <h2>42</h2>
+              <h1>YEAR</h1>
+              <h2>{currentTime[4]}</h2>
             </div>
           </div>
         </div>
